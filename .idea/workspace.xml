@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/mainPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rentee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renteePage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renteePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storePage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="store and rentee GUI finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +42,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "220",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "261",
-    "last_opened_file_path": "/home/bek/Downloads/JTattoo-1.6.13.jar",
+    "last_opened_file_path": "/home/bek/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -88,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673370086539</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="store and rentee GUI finished">
+      <created>1673526349167</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673526349167</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +107,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="store and rentee GUI finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="store and rentee GUI finished" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

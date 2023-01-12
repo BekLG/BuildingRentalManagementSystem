@@ -2,10 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
 public class mainPage extends JDialog{
     private JPanel mainPane;
     private JPanel navbarPane;
@@ -21,8 +17,7 @@ public mainPage() {
             sp.setTitle("STORE");
             sp.setBounds(100,130, 1150,600);
             sp.setVisible(true);
-            sp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+            sp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         }
     });
@@ -34,7 +29,7 @@ public mainPage() {
             rp.setTitle("RENTEE");
             rp.setBounds(100,130, 1150,600);
             rp.setVisible(true);
-            rp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            rp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         }
     });
@@ -50,12 +45,12 @@ public mainPage() {
             mp.setTitle("BUILDING RENTAL MANAGEMENT SYSTEM");
             mp.setBounds(50,50, 1250,700);
             mp.setVisible(true);
-            mp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            mp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
-//        catch (ClassNotFoundException ex)
-//        {
-//            ex.printStackTrace();
-//        }
+        catch (IllegalArgumentException ex)
+        {
+            ex.printStackTrace();
+        }
         catch (Exception ex) {
             ex.printStackTrace();
         }
