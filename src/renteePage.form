@@ -64,14 +64,6 @@
               <text value="phone no"/>
             </properties>
           </component>
-          <component id="5965a" class="javax.swing.JTextField" binding="tfStoreNo">
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties/>
-          </component>
           <component id="b34f1" class="javax.swing.JTextField" binding="tfPhoneNo">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -103,6 +95,12 @@
             <properties>
               <text value="note: date should be inserted in yyyy-mm-dd format"/>
             </properties>
+          </component>
+          <component id="c51db" class="javax.swing.JComboBox" binding="cmbStoreNo">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
           </component>
         </children>
       </grid>
