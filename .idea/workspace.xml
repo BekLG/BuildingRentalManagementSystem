@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="store and rentee GUI finished">
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="store page functionality completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +31,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "220",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "261",
-    "last_opened_file_path": "/home/bek/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;220&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;261&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bek/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -91,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673526349167</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="store page functionality completed">
+      <created>1673538194059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673538194059</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,7 +110,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="store and rentee GUI finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="store and rentee GUI finished" />
+    <MESSAGE value="store page functionality completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="store page functionality completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
