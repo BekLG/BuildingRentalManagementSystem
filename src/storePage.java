@@ -212,8 +212,6 @@ public storePage() {
                 }
             }
 
-
-
         }
     });
     btnDelete.addActionListener(new ActionListener() {
@@ -303,7 +301,7 @@ public storePage() {
                     vector.add(st.resultSet.getString(columnIndex));
                 }
                 data.add(vector);
-                //System.out.println(bk.resultSet.getString(2));
+
             }
             tblStore.setModel(new DefaultTableModel(data,titles));
             tblStore.setDefaultEditor(Object.class,null);
