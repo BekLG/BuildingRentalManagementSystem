@@ -116,7 +116,28 @@
       <option name="project" value="LOCAL" />
       <updated>1673615867948</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add rentee completed">
+      <created>1673715116173</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673715116173</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add rentee completed">
+      <created>1673715348155</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673715348155</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add rentee completed and removed refresh button">
+      <created>1673715420478</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673715420478</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
