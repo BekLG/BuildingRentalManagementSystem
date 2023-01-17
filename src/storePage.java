@@ -196,13 +196,6 @@ public storePage() {
                             JOptionPane.PLAIN_MESSAGE);
                     refreshStoreTable();
                 }
-                catch (SQLIntegrityConstraintViolationException ex)
-                {
-                    JOptionPane.showMessageDialog(storePane,
-                            "store number already exists",
-                            "error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
                 catch (ClassNotFoundException ex)
                 {
                     ex.printStackTrace();
@@ -220,9 +213,6 @@ public storePage() {
          //   store st= new store();
 
             st.storeNo =0;
-            st.floorNo =0;
-            st.area =0;
-            st.price =0;
             try {
                 st.storeNo= Integer.parseInt(tfStoreNo.getText());
 
@@ -256,13 +246,6 @@ public storePage() {
                             JOptionPane.PLAIN_MESSAGE);
                     refreshStoreTable();
                 }
-//                catch (SQLIntegrityConstraintViolationException ex)
-//                {
-//                    JOptionPane.showMessageDialog(storePane,
-//                            "store number already exists",
-//                            "error",
-//                            JOptionPane.ERROR_MESSAGE);
-//                }
                 catch (ClassNotFoundException ex)
                 {
                     ex.printStackTrace();
