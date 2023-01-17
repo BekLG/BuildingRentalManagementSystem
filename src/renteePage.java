@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Vector;
 import java.text.SimpleDateFormat;
@@ -33,20 +34,9 @@ public renteePage() {
     java.sql.Date dates=new java.sql.Date(millis);
 
 
+    refreshCmbStore();
 
 
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        st.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
-        st.statement = st.connection.createStatement();
-        st.resultSet = st.statement.executeQuery("select storeNo from store where rented=false");
-        while (st.resultSet.next()) {
-            cmbStoreNo.addItem(st.resultSet.getObject(1));
-        }
-    }
-    catch (Exception ex) {
-        ex.printStackTrace();
-    }
     btnAddRentee.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -65,7 +55,6 @@ public renteePage() {
             {
                 ex.printStackTrace();
             }
-
             if (rn.id==0 || rn.storeNo==0 || rn.name.isEmpty() || rn.phoneNo.isEmpty() || rn.contStartDate.isEmpty() || rn.contEndDate.isEmpty())
             {
                 JOptionPane.showMessageDialog(renteePane,
@@ -73,7 +62,6 @@ public renteePage() {
                         "try again",
                         JOptionPane.ERROR_MESSAGE);
             }
-
             else
             {
                 try {
@@ -93,7 +81,16 @@ public renteePage() {
                             "new rentee added successfully",
                             "success",
                             JOptionPane.PLAIN_MESSAGE);
+                    // take the store
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    rn.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                    rn.preparedStatement = rn.connection.prepareStatement(" UPDATE store SET rented = true WHERE storeNo = ?;");
+                    //update store set rented= false where storeNo=? ;
+                    rn.preparedStatement.setInt(1, rn.storeNo);
+                    rn.preparedStatement.executeUpdate();
+
                     refreshStoreTable();
+                    refreshCmbStore();
                 }
                 catch (SQLIntegrityConstraintViolationException ex)
                 {
@@ -110,23 +107,151 @@ public renteePage() {
                     ex.printStackTrace();
                 }
             }
-
         }
     });
     tblRentee.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
             super.mouseClicked(e);
-            int selectedRowIndex= tblRentee.getSelectedRow();
-            tfId.setText(tblRentee.getValueAt(selectedRowIndex,0).toString());
-            tfName.setText(tblRentee.getValueAt(selectedRowIndex,1).toString());
-            tfPhoneNo.setText(tblRentee.getValueAt(selectedRowIndex,2).toString());
-//            cmbStoreNo.add((Component) tblRentee.getValueAt(selectedRowIndex,3),0);
-//            cmbStoreNo.setSelectedIndex(0);
+            try {
+                int selectedRowIndex= tblRentee.getSelectedRow();
+                tfId.setText(tblRentee.getValueAt(selectedRowIndex,0).toString());
+                tfName.setText(tblRentee.getValueAt(selectedRowIndex,1).toString());
+                tfPhoneNo.setText(tblRentee.getValueAt(selectedRowIndex,2).toString());
+                cmbStoreNo.getModel().setSelectedItem(tblRentee.getValueAt(selectedRowIndex,3));
+                tfContEndingDate.setText(tblRentee.getValueAt(selectedRowIndex,5).toString());
+            }
+
+            catch(ClassCastException ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+    });
+    btnUpdate.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            rn.id=0;
+            rn.storeNo=0;
+            try  {
+                rn.id= Integer.parseInt(tfId.getText());
+            //    rn.storeNo= ((Integer) cmbStoreNo.getSelectedItem()).intValue();
+                String strNo2 = cmbStoreNo.getSelectedItem().toString();
+                rn.storeNo= Integer.parseInt(strNo2);
+                rn.name= tfName.getText();
+                rn.phoneNo= tfPhoneNo.getText();
+                rn.contStartDate= String.valueOf(dates);
+                rn.contEndDate= tfContEndingDate.getText();
+            }
+            catch (NumberFormatException ex)
+            {
+                ex.printStackTrace();
+            }
+            if (rn.id==0 || rn.storeNo==0 || rn.name.isEmpty() || rn.phoneNo.isEmpty() || rn.contStartDate.isEmpty() || rn.contEndDate.isEmpty())
+            {
+                JOptionPane.showMessageDialog(renteePane,
+                        "please enter all fields",
+                        "try again",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else
+            {
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    st.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                    st.preparedStatement = st.connection.prepareStatement("update rentee set id= ?, name=?, phoneNo=?, storeNo=?, contEndDate=? where id=? ;");
+                    st.preparedStatement.setInt(1, rn.id);
+                    st.preparedStatement.setString(2,rn.name);
+                    st.preparedStatement.setString(3,rn.phoneNo);
+                    st.preparedStatement.setInt(4, rn.storeNo);
+                    st.preparedStatement.setString(5,rn.contEndDate);
+                    st.preparedStatement.setInt(6, rn.id);
+                    st.preparedStatement.executeUpdate();
+
+                    JOptionPane.showMessageDialog(renteePane,
+                            " rentee updated successfully",
+                            "success",
+                            JOptionPane.PLAIN_MESSAGE);
+                    refreshStoreTable();
+                    refreshCmbStore();
+                }
+                catch (ClassNotFoundException ex)
+                {
+                    ex.printStackTrace();
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+    });
+    btnDelete.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            rn.id=0;
+            rn.storeNo=0;
+            try {
+                rn.id= Integer.parseInt(tfId.getText());
+               // rn.storeNo= (int) cmbStoreNo.getSelectedItem();
+              //  int strNo = (int) cmbStoreNo.getSelectedItem();
+                String strNo2 = cmbStoreNo.getSelectedItem().toString();
+                rn.storeNo= Integer.parseInt(strNo2);
+            }
+            catch (NumberFormatException ex)
+            {
+                ex.printStackTrace();
+            }
+            if (rn.id ==0 || rn.storeNo==0 )      //if fields are not filled
+            {
+                JOptionPane.showMessageDialog(renteePane,
+                        "please select the row to delete",
+                        "try again",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+            else
+            {
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    rn.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+
+                    rn.preparedStatement= rn.connection.prepareStatement("delete from rentee where id= ? ;");
+                    rn.preparedStatement.setInt(1,rn.id);
+                    rn.preparedStatement.executeUpdate();
+
+                    JOptionPane.showMessageDialog(renteePane,
+                            "rentee deleted successfully",
+                            "success",
+                            JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(renteePane,
+                            rn.storeNo,
+                            "success",
+                            JOptionPane.PLAIN_MESSAGE);
 
 
+                  //   release the store
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        rn.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                        rn.preparedStatement = rn.connection.prepareStatement(" UPDATE store SET rented = false WHERE storeNo = ?;");
+                        //update store set rented= false where storeNo=? ;
+                        rn.preparedStatement.setInt(1, rn.storeNo);
+                        rn.preparedStatement.executeUpdate();
 
-            tfContEndingDate.setText(tblRentee.getValueAt(selectedRowIndex,5).toString());
+                    refreshStoreTable();
+                    refreshCmbStore();
+                }
+                catch (ClassNotFoundException ex)
+                {
+                    ex.printStackTrace();
+                }
+                catch (ClassCastException ex)
+                {
+                    ex.printStackTrace();
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
         }
     });
 }
@@ -161,6 +286,23 @@ public renteePage() {
             }
             tblRentee.setModel(new DefaultTableModel(data,titles));
             tblRentee.setDefaultEditor(Object.class,null);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    void refreshCmbStore()
+    {
+        store st= new store();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            st.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+            st.statement = st.connection.createStatement();
+            st.resultSet = st.statement.executeQuery("select storeNo from store where rented=false");
+           cmbStoreNo.removeAllItems();
+            while (st.resultSet.next()) {
+                cmbStoreNo.addItem(st.resultSet.getObject(1));
+            }
         }
         catch (Exception ex) {
             ex.printStackTrace();
