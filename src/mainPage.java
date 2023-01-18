@@ -15,7 +15,7 @@ public mainPage() {
             storePage sp= new storePage();
             sp.setContentPane(sp.storePane);
             sp.setTitle("STORE");
-            sp.setBounds(100,130, 1150,600);
+            sp.setBounds(100,70, 1150,600);
             sp.setVisible(true);
             sp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -27,7 +27,7 @@ public mainPage() {
             renteePage rp= new renteePage();
             rp.setContentPane(rp.renteePane);
             rp.setTitle("RENTEE");
-            rp.setBounds(100,130, 1150,600);
+            rp.setBounds(100,70, 1150,600);
             rp.setVisible(true);
             rp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -39,7 +39,7 @@ public mainPage() {
             ststusPage sp= new ststusPage();
             sp.setContentPane(sp.statusPane);
             sp.setTitle("BUILDING STATUS");
-            sp.setBounds(100,130, 1150,600);
+            sp.setBounds(100,70, 1150,600);
             sp.setVisible(true);
             sp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }

@@ -1,7 +1,9 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.DriverManager;
+import java.util.Vector;
 
 public class ststusPage extends JDialog{
     private JTable tblDetail;
@@ -116,7 +118,142 @@ public ststusPage() {
         @Override
         public void actionPerformed(ActionEvent e) {
             // display details of rented stores
+                store st= new store();
+                Vector<Object> titles= new Vector<>();
+                titles.add("store no");
+                titles.add("floor no");
+                titles.add("area");
+                titles.add("price");
+                titles.add("rented");
 
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                    st.statement= st.connection.createStatement();
+                    st.resultSet= st.statement.executeQuery("select * from store where rented= true");
+                    Vector<Vector<Object>> data= new Vector<Vector<Object>>();
+                    while (st.resultSet.next())
+                    {
+                        Vector<Object> vector = new Vector<Object>();
+                        for (int columnIndex=1; columnIndex<=5;columnIndex ++)
+                        {
+                            vector.add(st.resultSet.getString(columnIndex));
+                        }
+                        data.add(vector);
+
+                    }
+                    tblDetail.setModel(new DefaultTableModel(data,titles));
+                    tblDetail.setDefaultEditor(Object.class,null);
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+    });
+    btnFreeDetail.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        // display free stores
+            store st= new store();
+            Vector<Object> titles= new Vector<>();
+            titles.add("store no");
+            titles.add("floor no");
+            titles.add("area");
+            titles.add("price");
+            titles.add("rented");
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                st.statement= st.connection.createStatement();
+                st.resultSet= st.statement.executeQuery("select * from store where rented= false");
+                Vector<Vector<Object>> data= new Vector<Vector<Object>>();
+                while (st.resultSet.next())
+                {
+                    Vector<Object> vector = new Vector<Object>();
+                    for (int columnIndex=1; columnIndex<=5;columnIndex ++)
+                    {
+                        vector.add(st.resultSet.getString(columnIndex));
+                    }
+                    data.add(vector);
+
+                }
+                tblDetail.setModel(new DefaultTableModel(data,titles));
+                tblDetail.setDefaultEditor(Object.class,null);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    });
+    btnPaidDetail.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Vector<Object> titles= new Vector<>();
+            titles.add("id ");
+            titles.add("name");
+            titles.add("phone no");
+            titles.add("store no");
+            titles.add("contract start date");
+            titles.add("contract end date");
+            try {
+                rentee rn= new rentee();
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                rn.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                rn.statement= rn.connection.createStatement();
+                rn.resultSet= rn.statement.executeQuery("select * from rentee where contEndDate > '"+ dates +"' or contEndDate = '"+ dates +"' ;");
+                Vector<Vector<Object>> data= new Vector<Vector<Object>>();
+
+                while (rn.resultSet.next())
+                {
+                    Vector<Object> vector = new Vector<Object>();
+                    for (int columnIndex=1; columnIndex<=6;columnIndex ++)
+                    {
+                        vector.add(rn.resultSet.getString(columnIndex));
+                    }
+                    data.add(vector);
+                }
+                tblDetail.setModel(new DefaultTableModel(data,titles));
+                tblDetail.setDefaultEditor(Object.class,null);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    });
+    btnUnpaidDetail.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Vector<Object> titles= new Vector<>();
+            titles.add("id ");
+            titles.add("name");
+            titles.add("phone no");
+            titles.add("store no");
+            titles.add("contract start date");
+            titles.add("contract end date");
+            try {
+                rentee rn= new rentee();
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                rn.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                rn.statement= rn.connection.createStatement();
+                rn.resultSet= rn.statement.executeQuery("select * from rentee where contEndDate < '"+ dates +"' ;");
+                Vector<Vector<Object>> data= new Vector<Vector<Object>>();
+
+                while (rn.resultSet.next())
+                {
+                    Vector<Object> vector = new Vector<Object>();
+                    for (int columnIndex=1; columnIndex<=6;columnIndex ++)
+                    {
+                        vector.add(rn.resultSet.getString(columnIndex));
+                    }
+                    data.add(vector);
+                }
+                tblDetail.setModel(new DefaultTableModel(data,titles));
+                tblDetail.setDefaultEditor(Object.class,null);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     });
 }
