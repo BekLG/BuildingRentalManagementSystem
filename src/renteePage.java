@@ -222,10 +222,7 @@ public renteePage() {
                             "rentee deleted successfully",
                             "success",
                             JOptionPane.PLAIN_MESSAGE);
-                    JOptionPane.showMessageDialog(renteePane,
-                            rn.storeNo,
-                            "success",
-                            JOptionPane.PLAIN_MESSAGE);
+
 
 
                   //   release the store
