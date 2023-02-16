@@ -79,7 +79,6 @@ public storePage() {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
-
                     st.preparedStatement= st.connection.prepareStatement("insert into store(storeNo, floorNo, area, price, rented) values(?,?,?,?,?);");
                     st.preparedStatement.setInt(1,st.storeNo);
                     st.preparedStatement.setInt(2,st.floorNo);
