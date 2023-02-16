@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="added clear button">
-      <change afterPath="$PROJECT_DIR$/src/images/car-key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/clear (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/delete-user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/franchise.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/lines (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/lines.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/minus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/monitor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/office-building.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/online-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/password (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/report.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/trend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/update-profile-user (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/user-avatar.png" afterDir="false" />
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="added icons to all the buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renteePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/renteePage.form" afterDir="false" />
@@ -57,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "220",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "261",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "228",
     "last_opened_file_path": "/home/bek/IdeaProjects/BuildingRentalMS2/src/images",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -185,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676528432636</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added icons to all the buttons">
+      <created>1676530005212</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676530005212</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +199,8 @@
     <MESSAGE value="first commit after clone" />
     <MESSAGE value="removed unnecessary spaces in the code" />
     <MESSAGE value="added clear button" />
-    <option name="LAST_COMMIT_MESSAGE" value="added clear button" />
+    <MESSAGE value="added icons to all the buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added icons to all the buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
