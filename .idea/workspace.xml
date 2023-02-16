@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="added icons to all the buttons">
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="cahnged font and colors on the front end, completed the front end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renteePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/renteePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/storePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ststusPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ststusPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/storePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676530005212</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="cahnged font and colors on the front end, completed the front end">
+      <created>1676532439976</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676532439977</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +204,8 @@
     <MESSAGE value="removed unnecessary spaces in the code" />
     <MESSAGE value="added clear button" />
     <MESSAGE value="added icons to all the buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added icons to all the buttons" />
+    <MESSAGE value="cahnged font and colors on the front end, completed the front end" />
+    <option name="LAST_COMMIT_MESSAGE" value="cahnged font and colors on the front end, completed the front end" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

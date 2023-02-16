@@ -215,19 +215,38 @@ public class storePage extends JDialog {
                 else
                 {
                     try {
+
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                        st.statement= st.connection.createStatement();
+                        st.resultSet= st.statement.executeQuery("select * from store where storeNo=" + st.storeNo);
+                        while (st.resultSet.next())
+                        {
+                            st.rented=  st.resultSet.getBoolean(5);
+                        }
 
-                        st.preparedStatement= st.connection.prepareStatement("delete from store where storeNo= ? ;");
-                        st.preparedStatement.setInt(1,st.storeNo);
+                        if (st.rented==false)
+                        {
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                            st.preparedStatement= st.connection.prepareStatement("delete from store where storeNo= ? ;");
+                            st.preparedStatement.setInt(1,st.storeNo);
+                            st.preparedStatement.executeUpdate();
 
-                        st.preparedStatement.executeUpdate();
+                            JOptionPane.showMessageDialog(storePane,
+                                    "store deleted successfully",
+                                    "success",
+                                    JOptionPane.PLAIN_MESSAGE);
+                            refreshStoreTable();
+                        }
+                        else
+                        {
+                            JOptionPane.showMessageDialog(storePane,
+                                    "the selected store is rented, please first delete the rentee",
+                                    "try again",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
 
-                        JOptionPane.showMessageDialog(storePane,
-                                "store deleted successfully",
-                                "success",
-                                JOptionPane.PLAIN_MESSAGE);
-                        refreshStoreTable();
                     }
                     catch (ClassNotFoundException ex)
                     {
