@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="add rentee completed and removed refresh button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="first commit after clone">
+      <change beforePath="$PROJECT_DIR$/src/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renteePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renteePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ststusPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ststusPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673715450603</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="first commit after clone">
+      <created>1676526444332</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676526444332</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,7 +173,8 @@
     <MESSAGE value="combo box items fetched from store database" />
     <MESSAGE value="add rentee completed" />
     <MESSAGE value="add rentee completed and removed refresh button" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rentee completed and removed refresh button" />
+    <MESSAGE value="first commit after clone" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit after clone" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
