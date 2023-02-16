@@ -1,17 +1,12 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Vector;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.util.Date;
 
 public class renteePage extends JDialog {
     public JPanel renteePane;
@@ -24,6 +19,8 @@ public class renteePage extends JDialog {
     private JTable tblRentee;
     private JTextField tfContEndingDate;
     private JComboBox cmbStoreNo;
+    private JButton btnClear;
+
     public renteePage() {
 
         rentee rn= new rentee();
@@ -238,6 +235,16 @@ public class renteePage extends JDialog {
                     }
 
                 }
+            }
+        });
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfId.setText("");
+                tfName.setText("");
+                tfPhoneNo.setText("");
+                tfContEndingDate.setText("");
+                cmbStoreNo.setSelectedIndex(0);
             }
         });
     }

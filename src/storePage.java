@@ -21,6 +21,8 @@ public class storePage extends JDialog {
     private JButton btnDelete;
     // private JButton btnRefresh;
     private JTable tblStore;
+    private JButton btnClear;
+
     public storePage() {
         ButtonGroup G = new ButtonGroup();
         G.add(rBtnYes);
@@ -235,6 +237,16 @@ public class storePage extends JDialog {
                         ex.printStackTrace();
                     }
                 }
+            }
+        });
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfStoreNo.setText("");
+                tfFloorNo.setText("");
+                tfArea.setText("");
+                tfPrice.setText("");
+                G.clearSelection();
             }
         });
     }
