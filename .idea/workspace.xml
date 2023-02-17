@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="cahnged font and colors on the front end, completed the front end">
+    <list default="true" id="3f0c8670-d425-4e9d-8f4c-50ddefa81c3c" name="Changes" comment="fixed a bug while deleting a store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/buildingRentalManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renteePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renteePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/storePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/storePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "220",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "228",
-    "last_opened_file_path": "/home/bek/IdeaProjects/BuildingRentalMS2/src/images",
+    "last_opened_file_path": "/home/bek/IdeaProjects/BuildingRentalMS2/src/db-derby/lib/derby.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -47,11 +51,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/images" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.mainPage">
     <configuration name="mainPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mainPage" />
       <module name="buildingRentalManagementSystem" />
@@ -59,9 +63,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="h2-2.1.214.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$USER_HOME$/Downloads/h2-2022-06-13/h2/bin/h2-2.1.214.jar!/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="h2-2.1.214.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$USER_HOME$/Downloads/h2-2022-06-13/h2/bin/h2-2.1.214.jar!/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysql-connector-j-8.0.31.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$USER_HOME$/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar!/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.mainPage" />
+        <item itemvalue="JAR Application.h2-2.1.214.jar (1)" />
+        <item itemvalue="JAR Application.mysql-connector-j-8.0.31.jar" />
+        <item itemvalue="JAR Application.h2-2.1.214.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676532439977</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed a bug while deleting a store">
+      <created>1676538391091</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1676538391091</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +231,8 @@
     <MESSAGE value="added clear button" />
     <MESSAGE value="added icons to all the buttons" />
     <MESSAGE value="cahnged font and colors on the front end, completed the front end" />
-    <option name="LAST_COMMIT_MESSAGE" value="cahnged font and colors on the front end, completed the front end" />
+    <MESSAGE value="fixed a bug while deleting a store" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a bug while deleting a store" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

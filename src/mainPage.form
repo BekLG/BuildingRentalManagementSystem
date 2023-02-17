@@ -44,7 +44,7 @@
             </constraints>
             <properties>
               <icon value="images/trend.png"/>
-              <text value="BUILDING STSTUS"/>
+              <text value="BUILDING STATUS"/>
             </properties>
           </component>
         </children>

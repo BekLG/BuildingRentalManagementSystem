@@ -82,6 +82,13 @@ public class renteePage extends JDialog {
                         rn.preparedStatement.setInt(1, rn.storeNo);
                         rn.preparedStatement.executeUpdate();
 
+//                        Class.forName("org.h2.Driver");
+//                        rn.connection = DriverManager.getConnection("jdbc:h2:./data/buildingDB;USER=root;PASSWORD=root");
+//                        rn.preparedStatement = rn.connection.prepareStatement("UPDATE store SET rented = true WHERE storeNo = ?");
+//                        rn.preparedStatement.setInt(1, rn.storeNo);
+//                        rn.preparedStatement.executeUpdate();
+
+
                         refreshStoreTable();
                         refreshCmbStore();
                     }

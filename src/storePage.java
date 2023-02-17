@@ -24,6 +24,9 @@ public class storePage extends JDialog {
     private JButton btnClear;
 
     public storePage() {
+        String url = "jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root";     // first method
+        String forname= "com.mysql.cj.jdbc.Driver";            // first method
+
         ButtonGroup G = new ButtonGroup();
         G.add(rBtnYes);
         G.add(rBtnNo);
@@ -77,8 +80,8 @@ public class storePage extends JDialog {
                 else
                 {
                     try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                        Class.forName(forname);
+                        st.connection= DriverManager.getConnection(url);
 
                         st.preparedStatement= st.connection.prepareStatement("insert into store(storeNo, floorNo, area, price, rented) values(?,?,?,?,?);");
                         st.preparedStatement.setInt(1,st.storeNo);
@@ -167,8 +170,8 @@ public class storePage extends JDialog {
                 else
                 {
                     try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                        Class.forName(forname);
+                        st.connection= DriverManager.getConnection(url);
                         st.preparedStatement= st.connection.prepareStatement("update store set storeNo= ?, floorNo=?, area=?, price=?, rented=? where storeNo=? ;");
                         st.preparedStatement.setInt(1,st.storeNo);
                         st.preparedStatement.setInt(2,st.floorNo);
@@ -216,8 +219,8 @@ public class storePage extends JDialog {
                 {
                     try {
 
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                        Class.forName(forname);
+                        st.connection= DriverManager.getConnection(url);
                         st.statement= st.connection.createStatement();
                         st.resultSet= st.statement.executeQuery("select * from store where storeNo=" + st.storeNo);
                         while (st.resultSet.next())
@@ -227,8 +230,8 @@ public class storePage extends JDialog {
 
                         if (st.rented==false)
                         {
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+                            Class.forName(forname);
+                            st.connection= DriverManager.getConnection(url);
                             st.preparedStatement= st.connection.prepareStatement("delete from store where storeNo= ? ;");
                             st.preparedStatement.setInt(1,st.storeNo);
                             st.preparedStatement.executeUpdate();
@@ -281,8 +284,12 @@ public class storePage extends JDialog {
         titles.add("rented");
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            st.connection= DriverManager.getConnection("jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root");
+            String url = "jdbc:mysql://127.0.0.1/buildingDB?user=root&password=root";     // first method
+            String forname= "com.mysql.cj.jdbc.Driver";            // first method
+
+
+            Class.forName(forname);
+            st.connection= DriverManager.getConnection(url);
             st.statement= st.connection.createStatement();
             st.resultSet= st.statement.executeQuery("select * from store");
             Vector<Vector<Object>> data= new Vector<Vector<Object>>();
